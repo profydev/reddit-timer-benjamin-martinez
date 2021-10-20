@@ -4,12 +4,11 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <GlobalStyles />
       <Switch>
         <Route path="/" />
         <Route path="/search" />
