@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
+import GlobalStyles from './GlobalStyles.js';
 
 function App() {
   return (
