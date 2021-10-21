@@ -1,10 +1,22 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      App Placeholder
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" />
+        <Route path="/search" />
+      </Switch>
+      <div>
+        App Placeholder
+      </div>
+    </Router>
   );
 }
 
