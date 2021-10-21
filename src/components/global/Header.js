@@ -8,14 +8,14 @@ export default function Header() {
       <Link to="/"><Logo src="logo.svg" alt="logo.svg" /></Link>
       <Navigation>
         <Link to="/search">Search</Link>
-        <NavLink>How it works</NavLink>
-        <NavLink>About</NavLink>
+        <NavLink href="#how-it-works">How it works</NavLink>
+        <NavLink href="#about">About</NavLink>
       </Navigation>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
 display: grid;
 grid-auto-flow: column;
 height: 100px;
@@ -35,4 +35,4 @@ grid-auto-flow: column;
 align-items: center;
 gap:25px`;
 
-const NavLink = styled.p``;
+const NavLink = styled.a``;
