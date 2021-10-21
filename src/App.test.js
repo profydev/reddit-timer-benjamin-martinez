@@ -8,11 +8,10 @@ function setup() {
   return render(
     <MemoryRouter>
       <App />
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 }
 
-//Header test 
 describe('Header', () => {
   test('Logo link points to the correct page', () => {
     setup();
@@ -20,7 +19,7 @@ describe('Header', () => {
     screen.debug(link);
     userEvent.click(link);
     expect(
-      screen.getByRole('heading', { name: /Home/i })
+      screen.getByRole('heading', { name: /Home/i }),
     ).toBeInTheDocument();
   });
 
@@ -29,7 +28,7 @@ describe('Header', () => {
     const link = screen.getByRole('link', { name: /Search/i });
     userEvent.click(link);
     expect(
-      screen.getByRole('heading', { name: /Search/i })
+      screen.getByRole('heading', { name: /Search/i }),
     ).toBeInTheDocument();
   });
 });
