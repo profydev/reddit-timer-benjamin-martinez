@@ -7,7 +7,7 @@ export default function Header() {
     <Wrapper>
       <Link to="/"><Logo src="logo.svg" alt="logo.svg" /></Link>
       <Navigation>
-        <Link to="/search">Search</Link>
+        <Link to="/search/javascript">Search</Link>
         <NavLink href="#how-it-works">How it works</NavLink>
         <NavLink href="#about">About</NavLink>
       </Navigation>
