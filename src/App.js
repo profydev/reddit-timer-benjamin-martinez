@@ -5,17 +5,22 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
+import Header from './components/global/Header';
+import Home from './pages/Home';
+import Search from './pages/Search';
 
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
-        <Route path="/" />
-        <Route path="/search" />
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
       </Switch>
-      <div>
-        App Placeholder
-      </div>
     </Router>
   );
 }

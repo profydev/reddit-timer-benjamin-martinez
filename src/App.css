@@ -25,6 +25,7 @@
   
   body {
     margin: 0;
+    font-family: Montserrat;
   }
   
   /**
@@ -78,7 +79,14 @@
   
   a {
     background-color: transparent;
+    text-decoration: none;
   }
+
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
   
   /**
    * 1. Remove the bottom border in Chrome 57-
