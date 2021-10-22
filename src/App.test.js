@@ -1,7 +1,34 @@
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import React from 'react';
-import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders App', () => {
-  render(<App />);
+function setup() {
+  return render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>,
+  );
+}
+
+describe('Header', () => {
+  test('Logo link points to the correct page', () => {
+    setup();
+    const link = screen.getByRole('link', { name: /logo.svg/i });
+    screen.debug(link);
+    userEvent.click(link);
+    expect(
+      screen.getByRole('heading', { name: /Home/i }),
+    ).toBeInTheDocument();
+  });
+
+  test('"Search" link points to the correct page', () => {
+    setup();
+    const link = screen.getByRole('link', { name: /Search/i });
+    userEvent.click(link);
+    expect(
+      screen.getByRole('heading', { name: /Search/i }),
+    ).toBeInTheDocument();
+  });
 });
