@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <Wrapper>
-      <a href="https://ooloo.io/employers" target="_blank" rel="noreferrer">profy.dev</a>
+      <a href="https://profy.dev/employers" target="_blank" rel="noreferrer">profy.dev</a>
       <Link to="/" style={{ justifySelf: 'center' }}><Logo src="sign.svg" alt="sign.svg" /></Link>
       <Link to="/terms" style={{ justifySelf: 'right' }}>Terms & Privacy</Link>
     </Wrapper>

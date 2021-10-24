@@ -55,6 +55,6 @@ describe('Footer', () => {
 
   test('"Profy.dev" link points to the correct page', () => {
     setup();
-    expect(screen.getByText('profy.dev').closest('a')).toHaveAttribute('href', 'https://ooloo.io/employers');
+    expect(screen.getByText('profy.dev').closest('a')).toHaveAttribute('href', 'https://profy.dev/employers');
   });
 });
