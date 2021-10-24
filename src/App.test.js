@@ -16,7 +16,6 @@ describe('Header', () => {
   test('Logo link points to the correct page', () => {
     setup();
     const link = screen.getByRole('link', { name: /logo.svg/i });
-    screen.debug(link);
     userEvent.click(link);
     expect(
       screen.getByRole('heading', { name: /No reactions to your reddit posts?/i }),
@@ -37,7 +36,6 @@ describe('Footer', () => {
   test('Logo link points to the correct page', () => {
     setup();
     const link = screen.getByRole('link', { name: /sign.svg/i });
-    screen.debug(link);
     userEvent.click(link);
     expect(
       screen.getByRole('heading', { name: /No reactions to your reddit posts?/i }),
@@ -56,17 +54,5 @@ describe('Footer', () => {
   test('"Profy.dev" link points to the correct page', () => {
     setup();
     expect(screen.getByText('profy.dev').closest('a')).toHaveAttribute('href', 'https://profy.dev/employers');
-  });
-});
-
-describe('Hero Section', () => {
-  test('"Show me the best time" buton points to the correct page', () => {
-    setup();
-    const link = screen.getByRole('link', { name: /Show me the best time/i });
-    screen.debug(link);
-    userEvent.click(link);
-    expect(
-      screen.getByRole('heading', { name: /Search/i }),
-    ).toBeInTheDocument();
   });
 });
