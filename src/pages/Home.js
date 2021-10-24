@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
         <Subtitle>
           Great timing, great results! Find the best time to post on your subreddit!
         </Subtitle>
-        <ToSearchResults>Show me the best time</ToSearchResults>
+        <Link to="/search/javascript">
+          <ToSearchResults>Show me the best time</ToSearchResults>
+        </Link>
         <RedditTag>r/javascript</RedditTag>
       </ContentWrapper>
       <HeatMapImage src="table.png" alt="table.png" />
