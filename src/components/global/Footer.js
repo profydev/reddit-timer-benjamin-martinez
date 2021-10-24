@@ -12,7 +12,7 @@ export default function Footer() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
 display: grid;
 height: 100px;
 grid-template-columns: 1fr 1fr 1fr;
