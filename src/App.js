@@ -6,8 +6,10 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Header from './components/global/Header';
+import Footer from './components/global/Footer';
 import Home from './pages/Home';
 import Search from './pages/Search';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -20,7 +22,11 @@ function App() {
         <Route path="/search">
           <Search />
         </Route>
+        <Route path="/terms">
+          <Terms />
+        </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
