@@ -40,7 +40,7 @@ describe('Footer', () => {
     screen.debug(link);
     userEvent.click(link);
     expect(
-      screen.getByRole('heading', { name: /Home/i }),
+      screen.getByRole('heading', { name: /No reactions to your reddit posts?/i }),
     ).toBeInTheDocument();
   });
 
