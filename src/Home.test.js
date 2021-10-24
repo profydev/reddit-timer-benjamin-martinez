@@ -23,4 +23,3 @@ describe('Hero Section', () => {
     ).toBeInTheDocument();
   });
 });
-  
