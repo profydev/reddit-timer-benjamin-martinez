@@ -15,17 +15,17 @@ function setup() {
 }
 
 describe('Hero Section', () => {
-    test('"Show me the best time" button points to the correct page', () => {
-      setup();
-      const link = screen.getByRole('link', { name: /Show me the best time/i });
-      screen.debug(link);
-      userEvent.click(link);
-      screen.debug();
-      expect(
-        screen.getByText('Search'),
-      ).toBeInTheDocument();
-    });
+  test('"Show me the best time" button points to the correct page', () => {
+    setup();
+    const link = screen.getByRole('link', { name: /Show me the best time/i });
+    screen.debug(link);
+    userEvent.click(link);
+    screen.debug();
+    expect(
+      screen.getByText('Search'),
+    ).toBeInTheDocument();
   });
+});
 
 describe('Info Section', () => {
   test('"Profy.dev" link points to the correct page', () => {
