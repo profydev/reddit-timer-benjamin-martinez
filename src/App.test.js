@@ -16,10 +16,9 @@ describe('Header', () => {
   test('Logo link points to the correct page', () => {
     setup();
     const link = screen.getByRole('link', { name: /logo.svg/i });
-    screen.debug(link);
     userEvent.click(link);
     expect(
-      screen.getByRole('heading', { name: /Home/i }),
+      screen.getByRole('heading', { name: /No reactions to your reddit posts?/i }),
     ).toBeInTheDocument();
   });
 
@@ -37,10 +36,9 @@ describe('Footer', () => {
   test('Logo link points to the correct page', () => {
     setup();
     const link = screen.getByRole('link', { name: /sign.svg/i });
-    screen.debug(link);
     userEvent.click(link);
     expect(
-      screen.getByRole('heading', { name: /Home/i }),
+      screen.getByRole('heading', { name: /No reactions to your reddit posts?/i }),
     ).toBeInTheDocument();
   });
 
