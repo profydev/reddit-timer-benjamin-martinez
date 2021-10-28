@@ -7,6 +7,7 @@ export default function Header() {
 
   function handleClick() {
     history.push('/search/javascript');
+    history.go(0);
   }
 
   return (
