@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom';
 
 export default function Header() {
   const history = useHistory();
 
-  function handleClick(e) {
-    history.push(`/search/javascript`);
+  function handleClick() {
+    history.push('/search/javascript');
   }
 
   return (
