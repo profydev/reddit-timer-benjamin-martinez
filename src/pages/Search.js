@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 export default function Search() {
   const history = useHistory();
   const [query, setQuery] = useState(history.location.pathname.substring(8));
+  const [resultsDisplayed, setResultsDisplayed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function getData() {
+    const apiRoute = `https://www.reddit.com/r/${query}/top.json?t=year&limit=500`;
+
+    fetch(apiRoute)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setIsLoading(false);
+      });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
     history.push(`/search/${query}`);
+    setResultsDisplayed(true);
+    setIsLoading(true);
+    getData();
   }
 
   function handleChange(e) {
@@ -25,6 +41,7 @@ export default function Search() {
           <SearchButton type="submit">Search</SearchButton>
         </SubredditForm>
       </ContentWrapper>
+      {resultsDisplayed && (<ResultsWrapper>{isLoading ? <Spinner src="/spinner.svg" alt="spinner.svg" /> : <Results />}</ResultsWrapper>)}
     </Wrapper>
   );
 }
@@ -76,3 +93,22 @@ text-transform: uppercase;
 :hover {
   cursor: pointer;
 }`;
+
+const ResultsWrapper = styled.div`
+margin-top: 56px;`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Spinner = styled.img`
+display: block;
+animation: ${rotate} 1.5s linear infinite;`;
+
+const Results = styled.div``;

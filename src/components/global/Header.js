@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Link to="/"><Logo src="logo.svg" alt="logo.svg" /></Link>
+      <Link to="/"><Logo src="/logo.svg" alt="logo.svg" /></Link>
       <Navigation>
         <Link to="/search/javascript" onClick={handleClick}>Search</Link>
         <NavLink href="#how-it-works">How it works</NavLink>
