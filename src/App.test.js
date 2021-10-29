@@ -27,7 +27,7 @@ describe('Header', () => {
     const link = screen.getByRole('link', { name: /Search/i });
     userEvent.click(link);
     expect(
-      screen.getByRole('heading', { name: /Search/i }),
+      screen.getByRole('heading', { name: /Find the best time for a subreddit/i }),
     ).toBeInTheDocument();
   });
 });
